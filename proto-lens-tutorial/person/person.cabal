@@ -1,0 +1,44 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 55ea54695ebbe104db305ab58ecb8bf24e386c1d9a2457b2a82321ceca790a42
+
+name:           person
+version:        0.0.0
+license-file:   LICENSE
+build-type:     Custom
+cabal-version:  >= 1.24
+extra-source-files:
+    proto/person.proto
+
+custom-setup
+  setup-depends:
+      Cabal
+    , base
+    , proto-lens-setup
+
+library
+  exposed-modules:
+      Proto.Person
+      Proto.Person_Fields
+  other-modules:
+      Paths_person
+  build-depends:
+      base
+    , proto-lens-runtime
+  default-language: Haskell2010
+
+executable person
+  main-is: Main.hs
+  other-modules:
+      Paths_person
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , microlens
+    , person
+    , proto-lens
+    , proto-lens-runtime
+  default-language: Haskell2010

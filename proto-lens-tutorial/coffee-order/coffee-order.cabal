@@ -1,0 +1,42 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 649a0d1af1b68472cd5ac4b234beec5c2654f60fcebf5ce916cf5cdca29dda41
+
+name:           coffee-order
+version:        0.1.0.0
+category:       Data
+homepage:       https://github.com/google/proto-tutorial/coffee-order#readme
+author:         Fintan Halpenny
+maintainer:     fintan.halpenny@gmail.com
+copyright:      2017 Google Inc.
+license:        BSD3
+license-file:   LICENSE
+build-type:     Custom
+cabal-version:  >= 1.24
+extra-source-files:
+    proto/coffee/order.proto
+    README.md
+
+custom-setup
+  setup-depends:
+      Cabal
+    , base
+    , proto-lens-setup
+
+executable gimme-coffee
+  main-is: Main.hs
+  other-modules:
+      Proto.Coffee.Order
+      Proto.Coffee.Order_Fields
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , lens-labels
+    , microlens
+    , proto-lens
+    , proto-lens-runtime
+    , text
+  default-language: Haskell2010

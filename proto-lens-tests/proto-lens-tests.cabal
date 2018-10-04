@@ -1,0 +1,639 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5754684b8e7436ba0a670ba52013496dc6837800a73529a73db1766996198d84
+
+name:           proto-lens-tests
+version:        0.1.0.1
+synopsis:       Unit tests for proto-lens
+description:    This package contains a set of test suites for proto-lens.
+category:       Data
+author:         Judah Jacobson
+maintainer:     proto-lens@googlegroups.com
+copyright:      Google Inc.
+license:        BSD3
+license-file:   LICENSE
+build-type:     Custom
+cabal-version:  >= 1.24
+extra-source-files: tests/*.proto
+
+custom-setup
+  setup-depends:
+      Cabal
+    , base
+    , proto-lens-setup
+
+library
+  exposed-modules:
+      Data.ProtoLens.TestUtil
+      Proto.Lib
+  other-modules:
+      Paths_proto_lens_tests
+  hs-source-dirs:
+      src
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite any_test
+  type: exitcode-stdio-1.0
+  main-is: any_test.hs
+  other-modules:
+      Proto.Any
+      Proto.Any_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-protobuf-types
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite canonical_test
+  type: exitcode-stdio-1.0
+  main-is: canonical_test.hs
+  other-modules:
+      Proto.Canonical
+      Proto.Canonical_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite dependent_test
+  type: exitcode-stdio-1.0
+  main-is: dependent_test.hs
+  other-modules:
+      Proto.Dependent
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite enum_test
+  type: exitcode-stdio-1.0
+  main-is: enum_test.hs
+  other-modules:
+      Proto.Enum
+      Proto.Enum_Fields
+  hs-source-dirs:
+      tests
+  ghc-options: -fwarn-overlapping-patterns -fwarn-incomplete-patterns -Werror
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite group_test
+  type: exitcode-stdio-1.0
+  main-is: group_test.hs
+  other-modules:
+      Proto.Group
+      Proto.Group_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite imports_test
+  type: exitcode-stdio-1.0
+  main-is: imports_test.hs
+  other-modules:
+      Proto.Enum
+      Proto.Imports
+      Proto.ImportsDep
+      Proto.ImportsTransitive
+      Proto.ImportsTransitive2
+      Proto.Nested
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , lens-labels
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite labels_test
+  type: exitcode-stdio-1.0
+  main-is: labels_test.hs
+  other-modules:
+      Proto.Canonical
+      Proto.Canonical_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , lens-family-core
+    , lens-labels
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite map_test
+  type: exitcode-stdio-1.0
+  main-is: map_test.hs
+  other-modules:
+      Proto.Map
+      Proto.Map_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite names_test
+  type: exitcode-stdio-1.0
+  main-is: names_test.hs
+  other-modules:
+      Proto.Names
+      Proto.Names_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite no_package_test
+  type: exitcode-stdio-1.0
+  main-is: no_package_test.hs
+  other-modules:
+      Proto.NoPackage
+      Proto.NoPackage_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite oneof_test
+  type: exitcode-stdio-1.0
+  main-is: oneof_test.hs
+  other-modules:
+      Proto.Oneof
+      Proto.Oneof_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , lens-labels
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite optional_test
+  type: exitcode-stdio-1.0
+  main-is: optional_test.hs
+  other-modules:
+      Proto.Optional
+      Proto.Optional_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite package-deps_test
+  type: exitcode-stdio-1.0
+  main-is: package-deps_test.hs
+  other-modules:
+      Proto.PackageDeps
+      Proto.PackageDeps_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , proto-lens-tests-dep
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite packed_test
+  type: exitcode-stdio-1.0
+  main-is: packed_test.hs
+  other-modules:
+      Proto.Packed
+      Proto.Packed_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite pathological_test
+  type: exitcode-stdio-1.0
+  main-is: pathological_test.hs
+  other-modules:
+      Proto.Pathological
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite proto3_test
+  type: exitcode-stdio-1.0
+  main-is: proto3_test.hs
+  other-modules:
+      Proto.Proto3
+      Proto.Proto3_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite raw_fields_test
+  type: exitcode-stdio-1.0
+  main-is: raw_fields_test.hs
+  other-modules:
+      Proto.RawFields
+      Proto.RawFields_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite repeated_test
+  type: exitcode-stdio-1.0
+  main-is: repeated_test.hs
+  other-modules:
+      Proto.Repeated
+      Proto.Repeated_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite required_test
+  type: exitcode-stdio-1.0
+  main-is: required_test.hs
+  other-modules:
+      Proto.Required
+      Proto.Required_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , lens-family-core
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite service_test
+  type: exitcode-stdio-1.0
+  main-is: service_test.hs
+  other-modules:
+      Proto.Service
+      Proto.Service_Fields
+  hs-source-dirs:
+      tests
+  ghc-options: -fwarn-overlapping-patterns -Werror
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-protobuf-types
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite text-format_test
+  type: exitcode-stdio-1.0
+  main-is: text_format_test.hs
+  other-modules:
+      Proto.TextFormat
+      Proto.TextFormat_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-protobuf-types
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite unknown_fields_test
+  type: exitcode-stdio-1.0
+  main-is: unknown_fields_test.hs
+  other-modules:
+      Proto.UnknownFields
+      Proto.UnknownFields_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
+
+test-suite unwrapped_test
+  type: exitcode-stdio-1.0
+  main-is: unwrapped_test.hs
+  other-modules:
+      Proto.Canonical
+      Proto.Canonical_Fields
+  hs-source-dirs:
+      tests
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base
+    , bytestring
+    , lens-family
+    , lens-family-core
+    , lens-labels
+    , pretty
+    , proto-lens
+    , proto-lens-arbitrary
+    , proto-lens-runtime
+    , proto-lens-tests
+    , test-framework
+    , test-framework-hunit
+    , test-framework-quickcheck2
+    , text
+  default-language: Haskell2010
